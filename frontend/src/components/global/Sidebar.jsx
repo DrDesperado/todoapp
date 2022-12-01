@@ -1,26 +1,41 @@
-import { Container, Button, Stack } from '@chakra-ui/react';
-import { Link } from 'react-router-dom';
+import { Container, Button, Stack, Text } from '@chakra-ui/react';
+import { NavLink } from 'react-router-dom';
+import { FaTasks } from 'react-icons/fa';
+import { GiThink } from 'react-icons/gi';
+import { BiTask } from 'react-icons/bi';
 
 /* Sidebar */
 const Sidebar = () => {
   return (
     <Container my={10} p={1}>
       <Stack>
-        <Link to="/">
-          <Button m={2} width="100%" height="100px">
-            My tasks
+        <NavLink
+          to="/"
+          className={`${({ isActive }) => (isActive ? 'green' : undefined)}`}
+        >
+          <Button m={2} width="100%" height="120px">
+            <div className="flex justify-around  absolute w-40">
+              <FaTasks className="relative text-2xl " />
+              <text className="text-2xl">My tasks</text>
+            </div>
           </Button>
-        </Link>
-        <Link to="/important">
-          <Button m={2} width="100%" height="100">
-            My Dreams
+        </NavLink>
+        <NavLink to="/important">
+          <Button m={2} width="100%" height="120px">
+            <div className="flex justify-around  absolute w-40">
+              <GiThink className="relative text-2xl " />
+              <text className="text-2xl">My dream</text>
+            </div>
           </Button>
-        </Link>
-        <Link to="/completed">
-          <Button m={2} width="100%" height="100">
-            Completed
+        </NavLink>
+        <NavLink to="/completed">
+          <Button m={2} width="100%" height="120px">
+            <div className="flex justify-around  absolute w-40">
+              <BiTask className="relative text-2xl " />
+              <text className="text-2xl">Completed</text>
+            </div>
           </Button>
-        </Link>
+        </NavLink>
       </Stack>
     </Container>
   );

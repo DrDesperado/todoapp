@@ -1,12 +1,10 @@
 package com.desperado.todoapp.controller;
 
-
 import com.desperado.todoapp.model.Item;
 import com.desperado.todoapp.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.websocket.server.PathParam;
 import java.util.List;
 
 @RestController
@@ -19,7 +17,7 @@ public class ItemController {
 
     @GetMapping
     public List<Item> getAllItems() {
-        return  itemService.getAllItems();
+        return itemService.getAllItems();
     }
 
     @PostMapping("/addtask")
@@ -45,6 +43,4 @@ public class ItemController {
                 });
     }
 
-
 }
-

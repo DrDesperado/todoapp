@@ -2,7 +2,6 @@ package com.desperado.todoapp.service;
 
 import com.desperado.todoapp.model.Item;
 import com.desperado.todoapp.repository.ItemRepository;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
